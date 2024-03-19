@@ -2,7 +2,7 @@
 // import reactLogo from './assets/react.svg'
 // import viteLogo from '/vite.svg'
 
-function App() {
+export default function Login() {
   return (
       <div className="bg-ungu w-full h-screen flex items-center justify-center">
         <form className=" bg-putih w-[500px] h-3/4 rounded-3xl">
@@ -39,4 +39,3 @@ function App() {
   );
 }
 
-export default App;
