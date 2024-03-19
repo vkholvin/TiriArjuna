@@ -1,12 +1,21 @@
-// import { useState } from 'react'
-// import reactLogo from './assets/react.svg'
-// import viteLogo from '/vite.svg'
+import { Route, BrowserRouter as Router, Routes } from 'react-router-dom';
+import Home from './Home';
+import Login from './Login';
+// Assuming AddUser is also converted to TypeScript
+// import AddUser from './users/AddUser';
 
+// If you use functional components, there is no need to specify types here since you are not using props
 function App() {
   return (
-    <main className="py-10 bg-red-700 text-center">
-      <h1 className="font-bold text-3xl text-center">Vincent Anak Memek</h1>
-    </main>
+    <div className="App">    
+      <Router>
+        <Routes>
+          <Route path="/" element={<Login />} />
+          <Route path="/home" element={<Home />} />
+          <Route path="/login" element={<Login />} />
+        </Routes>
+      </Router>    
+    </div>
   );
 }
 
