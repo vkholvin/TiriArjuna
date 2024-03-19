@@ -8,13 +8,10 @@ export default function Navbar() {
             className="flex items-center space-x-3 rtl:space-x-reverse"
           >
             <img
-              src="https://flowbite.com/docs/images/logo.svg"
-              className="w-10 h-10 justify-center"
+              src="./assets/trijun.svg"
+              className="w-56 h-10 justify-center"
               alt="Company Logo"
             />
-            <span className="self-center text-2xl font-semibold whitespace-nowrap dark:text-white">
-              TiriArjuna
-            </span>
           </a>
           <button
             data-collapse-toggle="navbar-default"

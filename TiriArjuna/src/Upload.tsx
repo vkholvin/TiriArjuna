@@ -1,6 +1,9 @@
+import Navbar from "./component/Navbar"
+
 export default function Upload() {
   return (
     <div>
+      <Navbar />
       <div className="flex items-center justify-center w-full">
         <label
           htmlFor="dropzone-file"
