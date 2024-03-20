@@ -4,7 +4,7 @@ export default function Navbar() {
       <nav className="bg-white border-gray-200 dark:bg-gray-900">
         <div className="flex items-center justify-between mx-auto p-5 pr-15">
           <a
-            href="https://flowbite.com/"
+            href="/home"
             className="flex items-center space-x-3 rtl:space-x-reverse"
           >
             <img

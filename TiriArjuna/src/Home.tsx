@@ -27,7 +27,11 @@ const Home: React.FC = () => {
       <div className="flex flex-row justify-between mx-10 py-16">
         <h3 className="text-lg flex">Welcome ... </h3>
         <div className='pt-10 '>
-        <button className="bg-ungu font-bold w-80 p-3 rounded-full text-lg">Upload</button>
+        <a href="/upload">
+        <button href="/upload" className="bg-ungu font-bold w-80 p-3 rounded-full text-lg">
+          Upload
+          </button>
+          </a>
         </div>
       </div>
       <div className="mx-10">
