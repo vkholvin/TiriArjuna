@@ -5,7 +5,8 @@ export default {
     colors:{
       'ungu':'#CECEDC',
       'putih' : '#ffffff',
-      'abu': '#B2B2B2'
+      'abu': '#B2B2B2',
+      'navbar': '#A7A6E1'
     },
     extend: {},
   },
