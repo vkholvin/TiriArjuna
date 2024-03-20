@@ -73,7 +73,7 @@ const ActionButtons: React.FC<ActionButtonsProps> = ({ itemId }) => {
   };
 
   return (
-    <div className='flex flex-row justify-center space-x-5 w-1/2 '>
+    <div className='flex flex-row text-center justify-center space-x-5  '>
       <Link to={`/${itemId}/add`} className="">
         <img src='/assets/add.svg' alt="add"></img>
       </Link>
