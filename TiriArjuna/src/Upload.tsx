@@ -12,7 +12,7 @@ export default function Upload() {
           <h3 className="font-bold text-3xl text-center p-8 pb-5">Upload</h3>
           <label
             htmlFor="dropzone-file"
-            className=" bg-box flex flex-col items-center justify-center w-96 p-24 border-2 border-gray-300 border-dashed rounded-lg cursor-pointer bg-gray-50 dark:hover:bg-bray-800 dark:bg-gray-700 hover:bg-gray-100 dark:border-gray-600 dark:hover:border-gray-500 dark:hover:bg-gray-600"
+            className=" bg-tabel flex flex-col items-center justify-center w-96 p-24 border-2 border-gray-300 border-dashed rounded-lg cursor-pointer bg-gray-50 dark:hover:bg-bray-800 dark:bg-gray-700 hover:bg-gray-100 dark:border-gray-600 dark:hover:border-gray-500 dark:hover:bg-gray-600"
           >
             <svg
               className="w-8 h-8 mb-4 text-gray-500 dark:text-gray-400"
@@ -46,8 +46,8 @@ export default function Upload() {
             </div>
           </div>
 
-          <div className="mx-10 pt-10 w-96">
-          <button type="submit" className="w-full flex justify-center p-3 bg-navbar rounded-lg text-xl font-semibold hover:bg-abu">
+          <div className="mx-10 pt-5 w-96">
+          <button type="submit" className="w-full flex justify-center p-2 bg-navbar rounded-lg text-xl font-semibold hover:bg-abu">
            Submit
           </button>
           </div>

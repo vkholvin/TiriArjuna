@@ -43,19 +43,19 @@ const Home: React.FC = () => {
   return (
     <div>
       <Navbar />
-      <div className="flex flex-row justify-between mx-10 py-16">
+      <div className="flex flex-row justify-between mx-10 py-10">
         <h3 className="text-lg flex">Welcome ... </h3>
-        <div className='pt-10 '>
+        <div className='pt-6 '>
         <a href="/upload">
-        <button href="/upload" className="bg-ungu font-bold w-80 p-3 rounded-full text-lg">
+        <button className="bg-navbar font-bold w-80 p-3 rounded-full text-lg">
           Upload
           </button>
           </a>
         </div>
       </div>
       <div className="mx-10">
-        <table className="w-full border-y-4">
-          <thead className="border-b-4">
+        <table className="w-full border-y-2 border-black">
+          <thead className="border-b-2 border-black bg-heder">
             <tr>
               <th className="py-3 w-[20%]">Time</th>
               <th className="py-3 w-[20%]">Filename</th>
@@ -67,11 +67,11 @@ const Home: React.FC = () => {
           <tbody>
             {currentItems.map((item) => (
               <tr key={item.id}>
-                <td className="text-center py-6 border-y-2">{item.time}</td>
-                <td className="text-center py-6 border-y-2">{item.filename}</td>
-                <td className="text-center py-6 border-y-2">{item.category}</td>
-                <td className="text-center py-6 border-y-2">{item.updatedBy}</td>
-                <td className="text-center py-6 border-y-2">
+                <td className="text-center py-6 border-black border-y-2 bg-tabel">{item.time}</td>
+                <td className="text-center py-6 border-black border-y-2 bg-tabel">{item.filename}</td>
+                <td className="text-center py-6 border-black border-y-2 bg-tabel">{item.category}</td>
+                <td className="text-center py-6 border-black border-y-2 bg-tabel">{item.updatedBy}</td>
+                <td className="text-center py-6 border-black border-y-2 bg-tabel">
                   <ActionButtons itemId={item.id} />
                 </td>
               </tr>
@@ -87,7 +87,7 @@ const Home: React.FC = () => {
               <button
                 disabled={currentPage === 1}
                 onClick={() => handlePageChange(currentPage - 1)}
-                className="flex items-center justify-center px-3 h-8 leading-tight text-gray-500 bg-white border border-e-0 border-gray-300 rounded-s-lg hover:bg-gray-100 hover:text-gray-700 dark:bg-gray-800 dark:border-gray-700 dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-white"
+                className="flex items-center justify-center px-3 h-8 leading-tight bg-white border border-e-0  rounded-s-lg hover:bg-gray-100 hover:text-gray-700 dark:bg-gray-800 dark:border-gray-700 dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-white"
               >
                 Previous
               </button>
@@ -96,8 +96,8 @@ const Home: React.FC = () => {
               <li key={index}>
                 <button
                   onClick={() => handlePageChange(index + 1)}
-                  className={`flex items-center justify-center px-3 h-8 leading-tight text-gray-500 bg-white border border-gray-300 hover:bg-gray-100 hover:text-gray-700 dark:bg-gray-800 dark:border-gray-700 dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-white ${
-                    currentPage === index + 1 ? 'text-blue-600 bg-ungu' : ''
+                  className={`flex items-center justify-center px-3 h-8 leading-tight  border hover:bg-gray-100 hover:text-gray-700 dark:bg-gray-800 dark:border-gray-700 dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-white ${
+                    currentPage === index + 1 ? 'font-bold bg-ungu' : ''
                   }`}
                 >
                   {index + 1}
@@ -108,7 +108,7 @@ const Home: React.FC = () => {
               <button
                 disabled={currentPage === totalPages}
                 onClick={() => handlePageChange(currentPage + 1)}
-                className="flex items-center justify-center px-3 h-8 leading-tight text-gray-500 bg-white border border-gray-300 rounded-e-lg hover:bg-gray-100 hover:text-gray-700 dark:bg-gray-800 dark:border-gray-700 dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-white"
+                className="flex items-center justify-center px-3 h-8 leading-tight bg-white border rounded-e-lg hover:bg-gray-100 hover:text-gray-700 dark:bg-gray-800 dark:border-gray-700 dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-white"
               >
                 Next
               </button>

@@ -28,9 +28,11 @@ export default function Login() {
           </div>
       </div>
       <div className="mx-10 py-5">
+      <a href="">
       <button type="submit" className="w-full flex justify-center p-3 bg-ungu rounded-full text-xl font-semibold hover:bg-abu">
         Login
       </button>
+      </a>
       </div>
 
 

@@ -1,69 +1,60 @@
+import { useState, useEffect } from 'react';
+import { Link, useLocation } from 'react-router-dom';
+
+type LinkName = 'home' | 'upload' | 'settings';
+
 export default function Navbar() {
+  const location = useLocation();
+  const [activeLink, setActiveLink] = useState<LinkName | ''>('');
+
+  useEffect(() => {
+    const path = location.pathname;
+    if (path === '/home') setActiveLink('home');
+    else if (path === '/upload') setActiveLink('upload');
+    else if (path === '/settings') setActiveLink('settings');
+  }, [location.pathname]);
+
+
+  const linkClass = (link: LinkName): string =>
+    `block py-2 px-3 mr-16 rounded md:p-0 ${
+      activeLink === link
+        ? 'md:bg-transparent font-bold'
+        : 'text-gray-900 hover:bg-gray-100  md:hover:bg-transparent md:hover:text-blue-700 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:text-blue-500'
+    }`;
+
   return (
     <div className="bg-navbar w-full sticky top-0">
-      <nav className="">
+      <nav>
         <div className="flex items-center justify-between mx-auto p-5 pr-15">
-          <a
-            href="/home"
-            className="flex items-center space-x-3 rtl:space-x-reverse"
-          >
-            <img
-              src="./assets/trijun.svg"
-              className="w-56 h-10 justify-center"
-              alt="Company Logo"
-            />
-          </a>
-          <button
-            data-collapse-toggle="navbar-default"
-            type="button"
-            className="inline-flex items-center p-2 w-10 h-10 justify-center text-sm text-gray-500 rounded-lg md:hidden hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-200 dark:text-gray-400 dark:hover:bg-gray-700 dark:focus:ring-gray-600"
-            aria-controls="navbar-default"
-            aria-expanded="false"
-          >
-            <span className="sr-only">Open main menu</span>
-            <svg
-              className="w-5 h-5"
-              aria-hidden="true"
-              xmlns="http://www.w3.org/2000/svg"
-              fill="none"
-              viewBox="0 0 17 14"
-            >
-              <path
-                stroke="currentColor"
-                strokeLinecap="round"
-                strokeLinejoin="round"
-                strokeWidth="2"
-                d="M1 1h15M1 7h15M1 13h15"
-              />
-            </svg>
-          </button>
+          <Link to="/" className="flex items-center space-x-3 rtl:space-x-reverse">
+            <img src="./assets/trijun.svg" className="w-56 h-10 justify-center" alt="Company Logo" />
+          </Link>
           <div className="hidden w-full md:block md:w-auto" id="navbar-default">
-            <ul className="font-medium flex flex-col p-4 md:p-0 mt-4 border rounded-lg md:flex-row md:space-x-8 rtl:space-x-reverse md:mt-0 md:border-0 dark:bg-gray-800 md:dark:bg-gray-900 dark:border-gray-700">
+            <ul className="flex flex-col text-lg  p-4 mt-4 border rounded-lg md:flex-row md:space-x-8 md:mt-0 md:border-0">
               <li>
-                <a
-                  href="/home"
-                  className="block py-2 px-3 mr-16 text-white bg-blue-700 rounded md:bg-transparent md:text-blue-700 md:p-0 dark:text-white md:dark:text-blue-500"
+                <Link
+                  to="/home"
+                  className={linkClass('home')}
                   aria-current="page"
                 >
                   Home
-                </a>
+                </Link>
               </li>
               <li>
-                <a
-                  href="/upload"
-                  className="block py-2 px-3 mr-16 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0 dark:text-white md:dark:hover:text-blue-500 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent"
-                  
+                <Link
+                  to="/upload"
+                  className={linkClass('upload')}
                 >
                   Upload
-                </a>
+                </Link>
               </li>
               <li>
-                <a
-                  href=""
-                  className="block py-2 px-3 mr-16 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0 dark:text-white md:dark:hover:text-blue-500 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent"
+                <Link
+                  to="/settings"
+                  className={linkClass('settings')}
                 >
                   Settings
-                </a>
+                </Link>
               </li>
               <li>
                 <a
