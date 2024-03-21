@@ -43,9 +43,9 @@ const Home: React.FC = () => {
   return (
     <div>
       <Navbar />
-      <div className="flex flex-row justify-between mx-10 py-10">
-        <h3 className="text-lg flex">Welcome ... </h3>
-        <div className='pt-6 '>
+      <div className="flex flex-row justify-between mx-10 py-8">
+        <h3 className="text-lg flex items-center">Welcome ... </h3>
+        <div className='pt-0 '>
         <a href="/upload">
         <button className="bg-navbar font-bold w-80 p-3 rounded-full text-lg">
           Upload

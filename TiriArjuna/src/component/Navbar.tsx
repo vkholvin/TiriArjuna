@@ -6,6 +6,7 @@ type LinkName = 'home' | 'upload' | 'settings';
 export default function Navbar() {
   const location = useLocation();
   const [activeLink, setActiveLink] = useState<LinkName | ''>('');
+  const [isModalOpen, setIsModalOpen] = useState(false);
 
   useEffect(() => {
     const path = location.pathname;
@@ -13,7 +14,6 @@ export default function Navbar() {
     else if (path === '/upload') setActiveLink('upload');
     else if (path === '/settings') setActiveLink('settings');
   }, [location.pathname]);
-
 
   const linkClass = (link: LinkName): string =>
     `block py-2 px-3 mr-16 rounded md:p-0 ${
@@ -57,17 +57,43 @@ export default function Navbar() {
                 </Link>
               </li>
               <li>
-                <a
-                  href="#"
-                  className="block py-2 px-3 mr-16 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0 dark:text-white md:dark:hover:text-blue-500 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent"
+                <button
+                  onClick={() => setIsModalOpen(true)}
+                  className= 'justify-start pr-10 text-gray-900 hover:bg-gray-100  md:hover:bg-transparent md:hover:text-blue-700 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:text-blue-500'
+                  type="button"
                 >
                   Logout
-                </a>
+                </button>
               </li>
             </ul>
           </div>
         </div>
       </nav>
+      {isModalOpen && (
+        <div className="fixed inset-0 z-50 flex items-center justify-center bg-black bg-opacity-30">
+          <div className="bg-white rounded-lg p-6 w-96">
+            <h2 className="text-lg font-semibold mb-4">Are you sure you want to Log Out?</h2>
+            <div className="flex justify-end">
+              <a href="/login">
+              <button
+                onClick={() => setIsModalOpen(false)}
+                className="px-4 py-2 bg-red-600 text-white rounded-lg mr-2"
+                type="button"
+              >
+                Yes, Log Out
+              </button>
+              </a>
+              <button
+                onClick={() => setIsModalOpen(false)}
+                className="px-4 py-2 bg-gray-300 text-gray-800 rounded-lg"
+                type="button"
+              >
+                No, cancel
+              </button>
+            </div>
+          </div>
+        </div>
+      )}
     </div>
   );
 }
