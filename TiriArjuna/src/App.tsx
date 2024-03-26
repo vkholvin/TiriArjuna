@@ -3,6 +3,8 @@ import Home from './Home';
 import Login from './Login';
 import Upload from './Upload'
 import Settings from './settings'
+import Register from './Register';
+
 
 // Assuming AddUser is also converted to TypeScript
 // import AddUser from './users/AddUser';
@@ -13,9 +15,9 @@ function App() {
     <div className="App">    
       <Router>
         <Routes>
-          <Route path="/" element={<Login />} />
+          <Route path="/register" element={<Register />} />
           <Route path="/home" element={<Home />} />
-          <Route path="/login" element={<Login />} />
+          <Route path="/" element={<Login />} />
           <Route path="/upload" element={<Upload />} />
           <Route path="/settings" element={<Settings />} />
         </Routes>

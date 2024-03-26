@@ -41,9 +41,9 @@ const Home: React.FC = () => {
   };
 
   return (
-    <div>
+    <div className="h-full">
       <Navbar />
-      <div className="flex flex-row justify-between mx-10 py-8">
+      <div className="flex flex-row justify-between mx-10 py-6">
         <h3 className="text-lg flex items-center">Welcome ... </h3>
         <div className='pt-0 '>
         <a href="/upload">
@@ -80,7 +80,7 @@ const Home: React.FC = () => {
         </table>
       </div>
       {/* Pagination */}
-      <div className="w-full flex items-center justify-center pt-5 pb-5">
+      <div className="w-full flex items-center justify-center pt-5 pb-2">
         <nav aria-label="Page navigation example">
           <ul className="inline-flex -space-x-px text-sm">
             <li>
