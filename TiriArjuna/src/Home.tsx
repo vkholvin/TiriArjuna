@@ -47,7 +47,7 @@ const Home: React.FC = () => {
         <h3 className="text-lg flex items-center">Welcome ... </h3>
         <div className='pt-0 '>
         <a href="/upload">
-        <button className="bg-navbar font-bold w-80 p-3 rounded-full text-lg">
+        <button id='upload' className="bg-navbar font-bold w-80 p-3 rounded-full text-lg">
           Upload
           </button>
           </a>
