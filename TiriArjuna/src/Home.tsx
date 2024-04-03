@@ -1,6 +1,6 @@
-import React, { useState } from 'react';
-import Navbar from './component/Navbar';
-import { Link } from 'react-router-dom';
+import React, { useState } from "react";
+import Navbar from "./component/Navbar";
+import { Link } from "react-router-dom";
 
 // Define the structure of your items
 interface Item {
@@ -17,16 +17,76 @@ const Home: React.FC = () => {
 
   // Dummy data array
   const dummyData: Item[] = [
-    { id: 1, time: "10:00 AM", filename: "document1.pdf", category: "Reports", updatedBy: "Alice" },
-    { id: 2, time: "11:00 AM", filename: "image2.png", category: "Images", updatedBy: "Bob" },
-    { id: 3, time: "12:00 PM", filename: "presentation3.ppt", category: "Presentations", updatedBy: "Charlie" },
-    { id: 4, time: "01:00 PM", filename: "spreadsheet4.xls", category: "Spreadsheets", updatedBy: "Dana" },
-    { id: 5, time: "02:00 PM", filename: "email5.eml", category: "Emails", updatedBy: "Eve" },
-    { id: 6, time: "10:00 AM", filename: "qedqed.pdf", category: "Reports", updatedBy: "Alice" },
-    { id: 7, time: "11:00 AM", filename: "imagewefwef2.png", category: "Images", updatedBy: "Bob" },
-    { id: 8, time: "12:00 PM", filename: "presenfwefwtation3.ppt", category: "Presentations", updatedBy: "Charlie" },
-    { id: 9, time: "01:00 PM", filename: "spreadwfwsheet4.xls", category: "Spreadsheets", updatedBy: "Dana" },
-    { id: 10, time: "02:00 PM", filename: "emailfwefw5.eml", category: "Emails", updatedBy: "Eve" },
+    {
+      id: 1,
+      time: "10:00 AM",
+      filename: "document1.pdf",
+      category: "Reports",
+      updatedBy: "Alice",
+    },
+    {
+      id: 2,
+      time: "11:00 AM",
+      filename: "image2.png",
+      category: "Images",
+      updatedBy: "Bob",
+    },
+    {
+      id: 3,
+      time: "12:00 PM",
+      filename: "presentation3.ppt",
+      category: "Presentations",
+      updatedBy: "Charlie",
+    },
+    {
+      id: 4,
+      time: "01:00 PM",
+      filename: "spreadsheet4.xls",
+      category: "Spreadsheets",
+      updatedBy: "Dana",
+    },
+    {
+      id: 5,
+      time: "02:00 PM",
+      filename: "email5.eml",
+      category: "Emails",
+      updatedBy: "Eve",
+    },
+    {
+      id: 6,
+      time: "10:00 AM",
+      filename: "qedqed.pdf",
+      category: "Reports",
+      updatedBy: "Alice",
+    },
+    {
+      id: 7,
+      time: "11:00 AM",
+      filename: "imagewefwef2.png",
+      category: "Images",
+      updatedBy: "Bob",
+    },
+    {
+      id: 8,
+      time: "12:00 PM",
+      filename: "presenfwefwtation3.ppt",
+      category: "Presentations",
+      updatedBy: "Charlie",
+    },
+    {
+      id: 9,
+      time: "01:00 PM",
+      filename: "spreadwfwsheet4.xls",
+      category: "Spreadsheets",
+      updatedBy: "Dana",
+    },
+    {
+      id: 10,
+      time: "02:00 PM",
+      filename: "emailfwefw5.eml",
+      category: "Emails",
+      updatedBy: "Eve",
+    },
   ];
 
   // Calculate pagination
@@ -45,11 +105,14 @@ const Home: React.FC = () => {
       <Navbar />
       <div className="flex flex-row justify-between mx-10 py-6">
         <h3 className="text-lg flex items-center">Welcome ... </h3>
-        <div className='pt-0 '>
-        <a href="/upload">
-        <button id='upload' className="bg-navbar font-bold w-80 p-3 rounded-full text-lg">
-          Upload
-          </button>
+        <div className="pt-0 ">
+          <a href="/upload">
+            <button
+              id="upload"
+              className="bg-navbar font-bold w-80 p-3 rounded-full text-lg"
+            >
+              Upload
+            </button>
           </a>
         </div>
       </div>
@@ -67,10 +130,18 @@ const Home: React.FC = () => {
           <tbody>
             {currentItems.map((item) => (
               <tr key={item.id}>
-                <td className="text-center py-6 border-black border-y-2 bg-tabel">{item.time}</td>
-                <td className="text-center py-6 border-black border-y-2 bg-tabel">{item.filename}</td>
-                <td className="text-center py-6 border-black border-y-2 bg-tabel">{item.category}</td>
-                <td className="text-center py-6 border-black border-y-2 bg-tabel">{item.updatedBy}</td>
+                <td className="text-center py-6 border-black border-y-2 bg-tabel">
+                  {item.time}
+                </td>
+                <td className="text-center py-6 border-black border-y-2 bg-tabel">
+                  {item.filename}
+                </td>
+                <td className="text-center py-6 border-black border-y-2 bg-tabel">
+                  {item.category}
+                </td>
+                <td className="text-center py-6 border-black border-y-2 bg-tabel">
+                  {item.updatedBy}
+                </td>
                 <td className="text-center py-6 border-black border-y-2 bg-tabel">
                   <ActionButtons itemId={item.id} />
                 </td>
@@ -80,14 +151,14 @@ const Home: React.FC = () => {
         </table>
       </div>
       {/* Pagination */}
-      <div className="w-full flex items-center justify-center pt-5 pb-2">
+      <div className="w-full flex items-center justify-center pt-20 pb-2">
         <nav aria-label="Page navigation example">
           <ul className="inline-flex -space-x-px text-sm">
             <li>
               <button
                 disabled={currentPage === 1}
                 onClick={() => handlePageChange(currentPage - 1)}
-                className="flex items-center justify-center px-3 h-8 leading-tight bg-white border border-e-0  rounded-s-lg hover:bg-gray-100 hover:text-gray-700 dark:bg-gray-800 dark:border-gray-700 dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-white"
+                className="flex items-center justify-center px-3 h-8 leading-tight  border border-e-0  rounded-s-lg hover:bg-gray-100 hover:text-gray-700 bg-navbar dark:border-gray-700 dark:text-black dark:hover:bg-gray-700 dark:hover:text-white"
               >
                 Previous
               </button>
@@ -96,8 +167,10 @@ const Home: React.FC = () => {
               <li key={index}>
                 <button
                   onClick={() => handlePageChange(index + 1)}
-                  className={`flex items-center justify-center px-3 h-8 leading-tight  border hover:bg-gray-100 hover:text-gray-700 dark:bg-gray-800 dark:border-gray-700 dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-white ${
-                    currentPage === index + 1 ? 'font-bold bg-ungu' : ''
+                  className={`flex items-center justify-center px-3 h-8 leading-tight  border hover:bg-gray-100 hover:text-gray-700 bg-navbar dark:border-gray-700 dark:text-black dark:hover:bg-gray-700 dark:hover:text-white ${
+                    currentPage === index + 1
+                      ? "font-bold dark:bg-gray-500"
+                      : ""
                   }`}
                 >
                   {index + 1}
@@ -108,7 +181,7 @@ const Home: React.FC = () => {
               <button
                 disabled={currentPage === totalPages}
                 onClick={() => handlePageChange(currentPage + 1)}
-                className="flex items-center justify-center px-3 h-8 leading-tight bg-white border rounded-e-lg hover:bg-gray-100 hover:text-gray-700 dark:bg-gray-800 dark:border-gray-700 dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-white"
+                className="flex items-center justify-center px-3 h-8 leading-tight bg-whitee border rounded-e-lg hover:bg-gray-100 hover:text-gray-700 bg-navbar dark:border-gray-700 dark:text-black dark:hover:bg-gray-700 dark:hover:text-white"
               >
                 Next
               </button>
@@ -116,9 +189,7 @@ const Home: React.FC = () => {
           </ul>
         </nav>
       </div>
-
     </div>
-  
   );
 };
 
